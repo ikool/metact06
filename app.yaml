@@ -1,0 +1,48 @@
+
+application: metact06 # cf. appengine.google.com
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+# Pensez à apprendre le REGEX!
+handlers:
+
+
+
+  
+- url: /profile
+  # Si la requête est de la forme définit plus haut, traiter cette dernière avec le fichier main.py
+  script: main.app
+  # Accès limité aux utilisateurs connectés avec leur compte google. L'utilisateur est redirigé sur le page de login Google s'il est non connecté 
+  login: required
+
+- url: /comment
+  # Si la requête est de la forme définit plus haut, traiter cette dernière avec le fichier main.py
+  script: main.app
+  # Accès limité aux utilisateurs connectés avec leur compte google. L'utilisateur est redirigé sur le page de login Google s'il est non connecté 
+
+- url: /profile/comment
+  # Si la requête est de la forme définit plus haut, traiter cette dernière avec le fichier main.py
+  script: main.app
+  # Accès limité aux utilisateurs connectés avec leur compte google. L'utilisateur est redirigé sur le page de login Google s'il est non connecté  
+
+# url vraie si vide ou ne contient pas de point  
+- url: /[^.]*
+  script: main.app
+
+# sinon chercher dans le dossier static selon l'url spécifiée
+# Les urls contentant .css, .js, .html, ... sont captées !
+#- url: /templates/*.html
+#  static_dir: templates
+
+- url: /
+  static_dir: static  
+
+ # [START libraries]
+libraries:
+- name: jinja2
+  version: latest
+- name: ssl
+  version: latest
+# [END libraries]

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/MaMeteo.css" />
+	<title>MaMétéo</title>
+</head>
+<body class="container">
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					</button>
+					<a class="navbar-brand" href="#">MaMétéo</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Parapente</a></li>
+								<li><a href="#">KiteSurf/WindSurf</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Petites annonces<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Consulter les annonces</a></li>
+								<li><a href="#">Créer une annonce</a></li>
+								<li><a href="#">Consulter les petites annonces</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						{% if not user %}
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> S'incrire</a></li>
+						{% endif %}
+						{% if not user %}
+						<li><a href="{{login_url}}"><span class="glyphicon glyphicon-log-in"></span> Se Connecter</a></li>
+						{% else %}
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span>
+								{{user.email()}}
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu"> 
+									<li><a href="/profile">Voir mon profil</a></li>
+									<li class="divider"></li>
+									<li><a href="{{logout_url}}">Déconnexion</a></li>
+								</ul>
+							</div>
+							{% endif %}
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="row">
+				<section class="col-md-9">
+					<div class="row">
+						<article class="col-md-6">
+							<div class="meteo">
+								<p>Lieu:</p>
+								<p>Ensoleillement:</p>
+								<p>Vent:</p>
+								<p>Direction:</p>
+							</div>
+						</article>
+						<aside class="hidden-xs col-md-6">
+							<div class="map">
+								Google map:
+							</div>
+						</aside>
+					</div>
+					<div class="row blank"></div>
+					<article class="row">
+						<div class="col-md-12">
+							<div class="info">
+								Description:
+							</div>
+						</div>
+					</article>		
+				</section>
+				<aside class="hidden-xs col-md-3">
+					<div class="annonces">
+						Annonces
+					</div>
+				</aside>
+			</div>
+
+			<form action="/comment" method="post"> 
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-7"> 
+							<h3>Ajouter un commentaire</h3>		  
+							<textarea class="form-control" id="" name="comment" rows="3" placeholder="Taper votre commentaire ici"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Envoyer</button>
+						</div>
+					</div>
+				</div>
+			</form>
+					<!-- <div class="row">
+						{% if info %}
+						<p>{{info}}</p>
+						{% endif %}
+					</div> -->
+					{% for post in posts %}
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									Date: {{post.date}} {{customers[loop.index0].email}}
+								</div>
+								<div class="panel-body">
+									{{ post.value }} 
+								</div>
+							</div>	
+						</div>
+					</div>
+					{% endfor %}
+					<footer class="row">
+						<div class="col-md-12">
+							Contacts
+						</div>
+					</footer>
+				</main>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+			</body>

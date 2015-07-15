@@ -1,0 +1,108 @@
+# extends "base.html" 
+# block title 
+Mon Profile
+# endblock 
+# block head 
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+# endblock 
+# block content 
+
+
+
+<main class="container" ng-controller='profilCtrl'>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Données accessibles lorsque l'utilisateur se connecte avec son profil Google à l'application :</h2>
+
+      <ul>
+
+        <li>
+          Utilisateur actuellement connecté ?
+          <strong>
+            {{ user is defined }}
+          </strong>
+        </li>
+
+        <li>
+          L'utilisateur est-il administrateur de cette application web ?
+          <strong>
+            {{ is_admin }}
+          </strong>
+        </li>
+
+        <li>
+          Adresse email :
+          <strong>{{user.email()}}</strong>
+        </li>
+
+        <li>
+          Nickname :
+          <strong>{{user.nickname()}}</strong>
+        </li>
+
+        <li>
+          Google id :
+          <strong>{{user.user_id()}}</strong>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+
+  </div >
+  <div ng-repeat="post in posts.Records" >
+   <div class="form-group" ng-show="select == post.key" >
+     <div class="row">
+      <div class="col-xs-12"> 
+       <h3>Modifier votre commentaire</h3>		  
+       <textarea class="form-control" id="" ng-model="commentaire"  name="comment" rows="3" ></textarea>
+     </div>
+   </div>
+   <div class="row">
+    <div class="col-md-1">
+     <button type="submit" id="singlebutton" ng-click="postPost(post.key,commentaire)" name="singlebutton" class="btn btn-primary">Valider</button>
+   </div>
+   <div class="col-md-1">
+     <button type="submit" id="singlebutton" ng-click="cancelPost(commentaire)" name="singlebutton" class="btn btn-primary">Annuler</button>
+   </div>
+ </div>
+</div>
+<div class="form-group" ng-hide="select == post.key" >
+<div class="row" >
+  <div class="col-xs-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Date: {[post.date | date]}
+      </div>
+      <div id="{[post.key]}" class="panel-body">
+        {[ post.value ]} 
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div class="row" >
+  <div id="bta-{[post.key]}" class="col-md-1">
+   <button   class="btn btn-primary" ng-click="modPost(post.key)">Modifier</button>
+ </div>
+ <div id="btb-{[post.key]}" class="col-md-1">
+   <button  class="btn btn-primary" ng-click="delPost(post.key)">Supprimer</button> 
+   <!--        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary"  method='DELETE' >Supprimer</button>  -->
+ </div>
+</div>
+</div>
+</div>
+<modifcomment></modifcomment>
+</main>
+
+<div id="logging-io">
+  <a href="/" class="btn btn-warning">Retour</a>
+</div>
+
+
+# endblock 

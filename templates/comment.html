@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/MaMeteo.css" />
+	<title>MaMétéo</title>
+</head>
+<body class="container">
+<form action="/profile/comment/{{safekey}}" method="post"> 
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-7"> 
+							<h3>Modifier un commentaire</h3>		  
+							<textarea class="form-control" id="" name="comment" rows="3" >{{post_modified.value}}</textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Envoyer</button>
+						</div>
+					</div>
+				</div>
+			</form>
+	<div>date: {{post_modified.value}}</div>
+	
+</body>

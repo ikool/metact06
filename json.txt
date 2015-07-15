@@ -1,0 +1,284 @@
+{
+    "cod": "200",
+    "message": 0.0741,
+    "city": {
+        "id": 2990440,
+        "name": "Nice",
+        "coord": {
+            "lon": 7.26608,
+            "lat": 43.703129
+        },
+        "country": "FR",
+        "population": 0,
+        "sys": {
+            "population": 0
+        }
+    },
+    "cnt": 10,
+    "list": [
+        {
+            "dt": 1434279600,
+            "temp": {
+                "day": 15.75,
+                "min": 12.17,
+                "max": 17.06,
+                "night": 12.17,
+                "eve": 17.06,
+                "morn": 15.75
+            },
+            "pressure": 950.87,
+            "humidity": 100,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "pluies mod\u00e9r\u00e9es",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 0.61,
+            "deg": 323,
+            "clouds": 92,
+            "rain": 6.79
+        },
+        {
+            "dt": 1434366000,
+            "temp": {
+                "day": 20.13,
+                "min": 13.81,
+                "max": 22.03,
+                "night": 13.81,
+                "eve": 21.58,
+                "morn": 14.66
+            },
+            "pressure": 953.03,
+            "humidity": 93,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "l\u00e9g\u00e8res pluies",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 2.03,
+            "deg": 256,
+            "clouds": 0,
+            "rain": 0.89
+        },
+        {
+            "dt": 1434452400,
+            "temp": {
+                "day": 19.99,
+                "min": 13.58,
+                "max": 21.74,
+                "night": 13.58,
+                "eve": 19.7,
+                "morn": 17.63
+            },
+            "pressure": 958.58,
+            "humidity": 92,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "pluies mod\u00e9r\u00e9es",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 0.86,
+            "deg": 87,
+            "clouds": 20,
+            "rain": 3.94
+        },
+        {
+            "dt": 1434538800,
+            "temp": {
+                "day": 18.04,
+                "min": 12.64,
+                "max": 18.04,
+                "night": 12.64,
+                "eve": 16.68,
+                "morn": 14.81
+            },
+            "pressure": 922.05,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "pluies mod\u00e9r\u00e9es",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.51,
+            "deg": 101,
+            "clouds": 37,
+            "rain": 9.23
+        },
+        {
+            "dt": 1434625200,
+            "temp": {
+                "day": 20.87,
+                "min": 12.65,
+                "max": 20.87,
+                "night": 12.65,
+                "eve": 20.35,
+                "morn": 14.5
+            },
+            "pressure": 920.9,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "l\u00e9g\u00e8res pluies",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.01,
+            "deg": 117,
+            "clouds": 15,
+            "rain": 0.81
+        },
+        {
+            "dt": 1434711600,
+            "temp": {
+                "day": 21.85,
+                "min": 14.28,
+                "max": 21.85,
+                "night": 14.28,
+                "eve": 21.76,
+                "morn": 16.21
+            },
+            "pressure": 921.53,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "l\u00e9g\u00e8res pluies",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.11,
+            "deg": 165,
+            "clouds": 35,
+            "rain": 1.56
+        },
+        {
+            "dt": 1434798000,
+            "temp": {
+                "day": 21.55,
+                "min": 14.3,
+                "max": 21.71,
+                "night": 14.3,
+                "eve": 21.71,
+                "morn": 17.44
+            },
+            "pressure": 921.45,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "pluies mod\u00e9r\u00e9es",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.11,
+            "deg": 155,
+            "clouds": 38,
+            "rain": 3.13
+        },
+        {
+            "dt": 1434884400,
+            "temp": {
+                "day": 23.96,
+                "min": 12.78,
+                "max": 23.96,
+                "night": 12.78,
+                "eve": 22.49,
+                "morn": 16.24
+            },
+            "pressure": 917.55,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "l\u00e9g\u00e8res pluies",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 0.49,
+            "deg": 156,
+            "clouds": 6,
+            "rain": 0.59
+        },
+        {
+            "dt": 1434970800,
+            "temp": {
+                "day": 22.23,
+                "min": 12.65,
+                "max": 22.23,
+                "night": 12.65,
+                "eve": 20.05,
+                "morn": 15.74
+            },
+            "pressure": 922.87,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "pluies mod\u00e9r\u00e9es",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 2.32,
+            "deg": 86,
+            "clouds": 38,
+            "rain": 3.68
+        },
+        {
+            "dt": 1435057200,
+            "temp": {
+                "day": 23.21,
+                "min": 13.07,
+                "max": 23.21,
+                "night": 13.07,
+                "eve": 21.86,
+                "morn": 15.82
+            },
+            "pressure": 925.79,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "l\u00e9g\u00e8res pluies",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.94,
+            "deg": 142,
+            "clouds": 10,
+            "rain": 1.45
+        }
+    ]
+}
+
+                                <!--  <form ng-submit="getweather()">
+ 
+                                    <input type="text" ng-model="form.city" size="20" />
+                                    <input type="submit" value="Add Friend" />
+                             
+                                </form>
+                                <p>Ensoleillement:
+                                    {{data.weather}}
+                                    <img ng-src="img/{{weather.list[0].weather[0].icon}}.png">
+                                    }
+                                </p>
+                                <p>Vent: {{wind}} m/s</p>
+                                <p>Direction: {{weather.list[0].wind.deg | number:0}} deg</p>  -->

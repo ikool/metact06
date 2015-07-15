@@ -1,0 +1,130 @@
+/*header {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: #4C4D4E;
+	color: #fff;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+#	-webkit-justify-content: center;
+#	    -ms-flex-pack: center;
+#	        justify-content: center;
+}
+h1 {
+	font-family: jura,sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+#	-ms-flex-item-align: center;
+#	    -webkit-align-self: center;
+#	        align-self: center;
+}*/
+body {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+[class*="col-"], footer {
+
+  border-radius: 6px;
+  line-height: 40px;
+  text-align: left;
+}
+/*
+nav > ul {
+	list-style: none;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+nav ul li {
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 120px;
+	z-index:3;
+	text-align: center;
+	background: transparent;
+	border-bottom: 0;
+}
+/*li > ul {
+	display: none;
+	list-style: none;
+	position:absolute;
+#	left: 0;
+	padding-right: 10px;
+	padding-left: 10px;
+    list-style-type: none;
+    list-style-position: outside;
+    margin-left: -11px;
+    padding: 0;
+
+}
+
+nav > ul > li:hover > ul{
+	display: block;
+	z-index: 2;
+	color: #fff;
+	margin-top: 18px;
+	background-color: #622c3f;
+
+}
+nav > ul > li > ul > li {
+	text-align: left;
+	padding-left: 11px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0;
+	border-bottom: 1px solid;
+
+}
+*/
+.box{
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.main {
+	height: 30em;
+	border: 1px solid;
+	width: 80%;
+}
+.meteo {
+	height: 23em;
+	border: 1px solid;
+}
+.map{
+	height: 23em;
+	border: 1px solid;
+}
+.info{
+	height: 15em;
+	border: 1px solid;
+}
+.annonces{
+	height: 40em;
+	border: 1px solid;
+}
+.commentaire{
+	border: 1px #333 solid;
+	border-radius: 1px;
+	
+}
+.blank{
+	height: 2em;
+}
+footer {
+
+}
