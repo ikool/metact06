@@ -112,7 +112,20 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-md-7"> 
-							<h3>Ajouter un commentaire</h3>		  
+							<h3>Ajouter un commentaire</h3>	
+							<div id="disqus_thread"></div>
+							<script type="text/javascript">
+							    /* * * CONFIGURATION VARIABLES * * */
+							    var disqus_shortname = 'metact06';
+							    
+							    /* * * DON'T EDIT BELOW THIS LINE * * */
+							    (function() {
+							        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+							    })();
+							</script>
+							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>	  
 							<textarea class="form-control" id="" ng-model="commentaire"  name="comment" rows="3" placeholder="Taper votre commentaire ici"></textarea>
 						</div>
 					</div>
@@ -155,5 +168,15 @@
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 				<script type="text/javascript" src="js/app.js"></script>
 				<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
-		
+				<script type="text/javascript">
+					var disqus_shortname = 'commentaire'; // required: replace example with your forum shortname
+
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function () {
+					var s = document.createElement('script'); s.async = true;
+					s.type = 'text/javascript';
+					s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					}());
+				</script>
 			</body>
