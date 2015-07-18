@@ -127,13 +127,14 @@ def list_comments():
 
 
 	
-	current_customer = get_current_customer()
-#	customers = [ post.key.parent().get() for post in posts ]
-	posts_user = Comments.query(ancestor = current_customer.key).fetch()
-	posts_safe = [ post.key.urlsafe() for post in posts_user]
+# 	current_customer = get_current_customer()
+# #	customers = [ post.key.parent().get() for post in posts ]
+# 	posts_user = Comments.query(ancestor = current_customer.key).fetch()
+# 	posts_safe = [ post.key.urlsafe() for post in posts_user]
 #	logging.info(posts_user)
-	
-	return jsonify(Result='OK', Records=encode_keys(posts_user))
+	posts = Comments.query(ancestor=INDEX.key).fetch()
+	logging.info (posts)
+	return jsonify(Result='OK', Records=encode_keys(posts))
 		
 
 

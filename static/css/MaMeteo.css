@@ -106,7 +106,7 @@ nav > ul > li > ul > li {
 	border: 1px solid;
 }
 .map{
-	height: 23em;
+	/*height: 23em;*/
 	border: 1px solid;
 }
 .info{
@@ -127,4 +127,7 @@ nav > ul > li > ul > li {
 }
 footer {
 
+}
+.angular-google-map-container { 
+  height: 23em; // Or whatever pixel value you require :)
 }

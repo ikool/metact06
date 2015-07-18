@@ -1,12 +1,18 @@
-var app = angular.module("maMeteo",['ngResource']);
+var app = angular.module("maMeteo",['ngResource','uiGmapgoogle-maps']);
 
 //changement des tags angular {{}} -> {[]}
-app.config(['$interpolateProvider', function($interpolateProvider) {
+app.config(['$interpolateProvider','uiGmapGoogleMapApiProvider', function($interpolateProvider,uiGmapGoogleMapApiProvider) {
   $interpolateProvider.startSymbol('{[');
   $interpolateProvider.endSymbol(']}');
+  uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyA5rkldojfAUAPcUXpz-vH2COXuuR8XWy8',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
 }]);
 
-app.controller("maMeteoCtrl",['$scope','dataMeteo',function($scope,dataMeteo) {
+
+app.controller("maMeteoCtrl",['$scope','dataMeteo','uiGmapGoogleMapApi',function($scope,dataMeteo,uiGmapGoogleMapApi) {
 	// $scope.weather = {location:"Nice"};
 	
 
@@ -20,6 +26,15 @@ app.controller("maMeteoCtrl",['$scope','dataMeteo',function($scope,dataMeteo) {
                 $scope.direction = data.list[0].deg;
             });
 }
+	 // Define variables for our Map object
+	var areaLat      = 43.5126995,
+	  areaLng      = 7.15,
+	  areaZoom     = 10;
+
+	uiGmapGoogleMapApi.then(function(maps) {
+		$scope.map     = { center: { latitude: areaLat, longitude: areaLng }, zoom: areaZoom };
+		$scope.options = { scrollwheel: true, mapTypeId: google.maps.MapTypeId.TERRAIN };
+	});
 
 }]);
 
@@ -75,12 +90,15 @@ app.controller("maMeteoCtrl",['$scope','dataMeteo',function($scope,dataMeteo) {
 		$scope.select =0;
 	};
 		
-	$scope.posts = Entry.query()	
+	$scope.posts = Entry.query(function(resp) {
+			console.log(resp);
+		})	
  }
 //		$window.location.reload()
 	
 	
  ]);
+
 
 
 app.factory('dataMeteo', ['$http', function($http) {
