@@ -54,7 +54,12 @@ def login_required(f):
 def get_current_customer():
     return Customer.query(ancestor = INDEX.key).filter(Customer.email==users.get_current_user().email()).get()
 
+# def encode_keys(entities):
+#     return [dict(e.to_dict(), **dict(key=e.key.urlsafe())) for e in entities]
+
 def encode_keys(entities):
+	# for e in entities:
+	# 	logging.info(e)
     return [dict(e.to_dict(), **dict(key=e.key.urlsafe())) for e in entities]
 
 def encode_key(entity):
@@ -134,6 +139,10 @@ def list_comments():
 #	logging.info(posts_user)
 	posts = Comments.query(ancestor=INDEX.key).fetch()
 	logging.info (posts)
+	for e in posts:
+		logging.info(e)
+		e=e.to_dict()
+		logging.info(e)
 	return jsonify(Result='OK', Records=encode_keys(posts))
 		
 

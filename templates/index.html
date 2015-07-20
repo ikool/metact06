@@ -86,7 +86,11 @@
 						</article>
 						<aside class="hidden-xs col-md-6">
 							<div class="map">
-								<ui-gmap-google-map center="map.center" options="options" zoom="map.zoom"></ui-gmap-google-map>
+								<ui-gmap-google-map center="map.center" options="map.options" zoom="map.zoom" events="map.events">
+
+									<ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id">
+    								</ui-gmap-marker>
+								</ui-gmap-google-map>
 							</div>
 						</aside>
 					</div>
