@@ -12,7 +12,7 @@ app.config(['$interpolateProvider','uiGmapGoogleMapApiProvider', function($inter
 }]);
 
 
-app.controller("maMeteoCtrl",['$scope','dataMeteo','uiGmapGoogleMapApi',function($scope,dataMeteo,uiGmapGoogleMapApi) {
+app.controller("maMeteoCtrl",['$scope','dataMeteo','uiGmapGoogleMapApi','dataMeteoDS',function($scope,dataMeteo,uiGmapGoogleMapApi,dataMeteoDS) {
 	// $scope.weather = {location:"Nice"};
 	
 
@@ -21,10 +21,13 @@ app.controller("maMeteoCtrl",['$scope','dataMeteo','uiGmapGoogleMapApi',function
 		dataMeteo.get(city).success(function(data){
 					console.log(data)
 					$scope.weather = data.list[0].weather[0].icon;
-					$scope.temp = data.list[0].temp.day;
+//					$scope.temp = data.list[0].temp.day;
+					$scope.temp = data.list[0].main.temp;
 					$scope.desc = data.list[0].weather[0].description;
-					$scope.wind = data.list[0].speed*3.6;
-					$scope.direction = data.list[0].deg;
+//					$scope.wind = data.list[0].speed*3.6;
+					$scope.wind = data.list[0].wind.speed*3.6;
+//					$scope.direction = data.list[0].deg;
+					$scope.direction = data.list[0].wind.deg;
 					$scope.map.center.latitude = data.city.coord.lat;
 					$scope.map.center.longitude = data.city.coord.lon;
 					console.log("lon: " + $scope.map.center.longitude + " lat :" + $scope.map.center.latitude)
@@ -71,12 +74,18 @@ app.controller("maMeteoCtrl",['$scope','dataMeteo','uiGmapGoogleMapApi',function
 					$scope.$apply();
 					dataMeteo.getcrd($scope.latitude,$scope.longitude).success(function(data){
 						$scope.weather = data.list[0].weather[0].icon;
-						$scope.temp = data.list[0].temp.day;
+//						$scope.temp = data.list[0].temp.day;
+						$scope.temp = data.list[0].main.temp;
 						$scope.desc = data.list[0].weather[0].description;
-						$scope.wind = data.list[0].speed*3.6;
-						$scope.direction = data.list[0].deg;
+//						$scope.wind = data.list[0].speed*3.6;
+						$scope.wind = data.list[0].wind.speed*3.6;
+//						$scope.direction = data.list[0].deg;
+						$scope.direction = data.list[0].wind.deg;
 						$scope.city = data.city.name;
 						console.log("City :"+$scope.city)
+					});
+					dataMeteoDS.get($scope.latitude,$scope.longitude).success(function(data){
+						console.log(data)
 					});
 				},
 				
@@ -168,13 +177,23 @@ app.factory('dataMeteo', ['$http', function($http) {
 			getcrd: getcrd
 		});
 	function get(id) {
-		return $http.get(urlBase + '/daily?q=' + id + "&units=metric&cnt=10&mode=json&lang=fr&APPID=97bb144054d3f8d2ab617db1a2922efd")
+		return $http.get(urlBase + '?q=' + id + "&units=metric&cnt=10&mode=json&lang=fr&APPID=97bb144054d3f8d2ab617db1a2922efd")
 	    } 
 	function getcrd(lat,lon) {
-		return $http.get(urlBase + '/daily?lat=' + lat + "&lon=" + lon + "&units=metric&cnt=10&mode=json&lang=fr&APPID=97bb144054d3f8d2ab617db1a2922efd")
+		return $http.get(urlBase + '?lat=' + lat + "&lon=" + lon + "&units=metric&cnt=10&mode=json&lang=fr&APPID=97bb144054d3f8d2ab617db1a2922efd")
 	    } 
 }]);
 
+app.factory('dataMeteoDS', ['$http', function($http) {
+	var urlBase = "https://api.forecast.io/forecast/1e4bc894d454e8999bc012e377a6b542/" ;
+	// dataMeteo.get = function(id) {
+		return ({
+			get: get,
+		});
+	function get(lat,lon) {
+		return $http.jsonp(urlBase + lat + "," + lon  + "?callback=JSON_CALLBACK", {params: {units :"uk2", lang : "fr"}})
+	    } 
+}]);
 
 app.factory('Entry', ['$resource', function($resource) {
   return $resource('/profile/comment/:id',{},{ 
